@@ -5,7 +5,7 @@ services:
     networks:
       - default
     build:
-      context: neo4j
+      context: docker/neo4j
     restart: always
     container_name: neo4j
     ports:
