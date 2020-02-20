@@ -1,0 +1,27 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+flake8 = "*"
+pytest = "*"
+pytest-cov = "*"
+pre-commit = "*"
+flake8-quotes = "*"
+autopep8 = "*"
+flake8-docstrings = "*"
+
+[packages]
+aioneo4j = "==0.0.5"
+fastapi = "==0.49.0"
+hupper = "*"
+watchdog = "*"
+unvicorn = "0.11.3"
+python-json-logger = "*"
+
+[requires]
+python_version = "3.7"
+
+[scripts]
+pre-commit = "pre-commit install"
