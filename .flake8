@@ -1,0 +1,4 @@
+[flake8]
+ignore = D200,D202,D400
+inline-quotes = '
+max-line-length = 128
