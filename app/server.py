@@ -18,9 +18,8 @@ def watch():
     """Watch files/"""
     reloader = hupper.start_reloader('app.server.run')
 
-    # monitor an extra file
     reloader.watch_files(['app/**/*.py'])
 
 
 if __name__ == '__main__':
-    run()
+    watch()
