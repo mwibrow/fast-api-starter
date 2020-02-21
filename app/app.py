@@ -4,7 +4,7 @@ Configure app
 from fastapi import FastAPI
 
 
-def configure_app():
+def get_app():
     """Configure application."""
     app = FastAPI()
 
