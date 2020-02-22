@@ -1,8 +1,10 @@
 """
 Server module
 """
+
 import hupper
 import uvicorn
+
 
 from .app import get_app
 from .config import Config
@@ -11,7 +13,12 @@ from .config import Config
 def run():
     """Run server."""
     app = get_app()
-    uvicorn.run(app, host=Config.APP_HOST, port=Config.APP_PORT, log_level=Config.LOG_LEVEL)
+
+    try:
+        uvicorn.run(app, host=Config.APP_HOST, port=Config.APP_PORT, log_level=Config.LOG_LEVEL)
+    except KeyboardInterrupt:
+        # await app.state.services.stop()
+        pass
 
 
 def watch():
@@ -22,4 +29,4 @@ def watch():
 
 
 if __name__ == '__main__':
-    watch()
+    run()

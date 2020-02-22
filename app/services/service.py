@@ -9,11 +9,11 @@ class Service(ABC):
     """Base class for services."""
 
     @abstractmethod
-    async def setup(self):
+    async def startup(self):
         """Set up the service (e.g., connect to database)."""
         pass
 
     @abstractmethod
-    async def teardown(self):
+    async def shutdown(self):
         """Teardown the service (e.g., disconnect to database)."""
         pass

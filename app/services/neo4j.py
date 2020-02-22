@@ -17,11 +17,11 @@ class Neo4jService(Service):
         self.password = password
         self.client = None
 
-    async def setup(self):
+    async def start(self):
         """Set up Neo4j client."""
         self.client = Neo4j()
         self.client.__aenter__()
 
-    async def teardown(self):
+    async def stop(self):
         """Tear down Neo4J client."""
         await self.close()
