@@ -1,0 +1,20 @@
+output-format: json
+
+strictness: veryhigh
+test-warnings: true
+doc-warnings: false
+autodetect: false
+max-line-length: 128
+
+ignore-paths:
+  - .venv
+  - notebooks
+  - .vscode
+
+pylint:
+  disable: C0330,
+    C0326
+  options:
+    max-locals: 32
+    max-args: 16
+    max-line-length: 128

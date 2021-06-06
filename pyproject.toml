@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "fast-api-starter"
+version = "0.1.0"
+description = ""
+authors = ["Mark Wibrow <m.wibrow@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+starlette = "^0.14.2"
+hupper = "^1.10.3"
+fastapi = "^0.65.1"
+watchdog = "^2.1.2"
+uvicorn = "^0.14.0"
+
+[tool.poetry.dev-dependencies]
+black = "^21.5b2"
+prospector = "^1.3.1"
+isort = ">=4.2.5,<5"
+pre-commit = "^2.13.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 128
+
+[tool.pytest.ini_options]
+filterwarnings = [
+    "ignore::DeprecationWarning"
+]
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
