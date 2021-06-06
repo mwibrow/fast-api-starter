@@ -18,5 +18,5 @@ class TestApp(unittest.TestCase):
 
     def test_status(self):
         """Test status"""
-        response = self.client.get("/")
+        response = self.client.get("/status")
         assert response.status_code == 200
