@@ -2,6 +2,7 @@
 Configure app
 """
 from fastapi import FastAPI
+from .config import APP_NAME, APP_VERSION
 
 
 class Application(FastAPI):
@@ -25,6 +26,6 @@ def get_app() -> FastAPI:
 
     @app.get("/status")
     async def status():
-        return {"message": "Healthy"}
+        return {"app": APP_NAME, "version": APP_VERSION, "message": "healthy"}
 
     return app
