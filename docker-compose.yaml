@@ -12,6 +12,8 @@ services:
       PYTHON_ENV: development
       APP_PORT: 8100
       APP_HOST: "0.0.0.0"
+    volumes:
+      - "./app/:/usr/src/app/app/"
     container_name: fast-api-server
     ports:
       - "8100:8100"
