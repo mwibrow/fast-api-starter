@@ -3,8 +3,6 @@ Configure app
 """
 from fastapi import FastAPI
 
-import asyncio
-
 
 class Application(FastAPI):
     """Application class."""
@@ -16,23 +14,17 @@ class Application(FastAPI):
 
     async def startup(self):
         """Start up."""
-        for i in range(10):
-            print("start", i)
-            await asyncio.sleep(0.5)
 
     async def shutdown(self):
         """Shutdown."""
-        for i in range(10):
-            print("stop", i)
-            await asyncio.sleep(0.5)
 
 
 def get_app():
     """Configure application."""
     app = Application()
 
-    @app.get("/")
-    async def root():
-        return {"message": "Hello World"}
+    @app.get("/status")
+    async def status():
+        return {"message": "Healthy"}
 
     return app

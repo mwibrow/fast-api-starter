@@ -1,35 +1,20 @@
 version: "3.5"
 
 services:
-  neo4j:
-    networks:
-      - default
-    build:
-      context: docker/neo4j
-    restart: always
-    container_name: neo4j
-    ports:
-      - "7474:7474"
   server:
     networks:
       - default
     build:
       context: .
-    command: python main.py
+    command: python -m app.server
     restart: always
     environment:
       PYTHON_ENV: development
-      APP_PORT: 8108
+      APP_PORT: 8100
       APP_HOST: "0.0.0.0"
-      NEO4J_PORT: 7474
-      NEO4J_HOST: "0.0.0.0"
-    volumes:
-      - "./server/:/usr/src/app/server/"
-      - "./main.py/:/usr/src/app/main.py"
-      - "./Pipfile.lock:/usr/src/app/Pipfile.lock"
     container_name: fast-api-server
     ports:
       - "8100:8100"
 networks:
   default:
-    name: graphdb
+    name: fast-api
