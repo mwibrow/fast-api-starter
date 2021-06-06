@@ -19,7 +19,7 @@ class Application(FastAPI):
         """Shutdown."""
 
 
-def get_app():
+def get_app() -> FastAPI:
     """Configure application."""
     app = Application()
 
