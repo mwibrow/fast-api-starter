@@ -26,8 +26,10 @@ FROM base AS build_development
 ONBUILD RUN poetry env use system && \
     poetry config virtualenvs.create false && \
     poetry install --no-interaction --no-ansi
-USER app
+
 
 FROM build_${PYTHON_ENV}
 
 COPY . /usr/src/app
+
+USER app
