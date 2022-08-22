@@ -6,17 +6,19 @@ services:
       - default
     build:
       context: .
+      args:
+        PYTHON_ENV: development
     command: python -m app.server
     restart: always
     environment:
       PYTHON_ENV: development
-      APP_PORT: 8100
+      APP_PORT: 8000
       APP_HOST: "0.0.0.0"
     volumes:
       - "./app/:/usr/src/app/app/"
     container_name: fast-api-server
     ports:
-      - "8100:8100"
+      - "8100:8000"
 networks:
   default:
     name: fast-api
